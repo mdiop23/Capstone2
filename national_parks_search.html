@@ -41,10 +41,11 @@
     </div>
   </nav>
 
-  
+
   <!--header for page-->
 
   <main>
+
     <div class="container mt-5">
       <div class="row">
         <div class="col-md text-center">
@@ -57,22 +58,42 @@
 
     <!--radio buttons-->
 
-    <div style="display: flex; justify-content: center;">
-      <div class="form-check">
+    <!-- <div style="display: flex; justify-content: center;">
+      <div>
+      <div class="form-check" style="margin-right: 20px;">
         <input class="form-check-input" type="radio" name="searchByLocation" id="searchByLocation">
         <label class="form-check-label" for="searchByLocation">
           Search By Location
         </label>
       </div>
+      </div> -->
+
+<!-- dropdowns -->
+    <div class="containerP">
+      <div class="col-md-6">
+        <select class="form-select" aria-label="searchByLocation" id="searchByLocation">
+          <option selected> Search by Location</option>
+          <option value=""></option>
+        </select>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="searchByParkType" id="searchByParkType" checked>
+      <div class="col-md-6">
+        <select class="form-select" aria-label="searchByParkType" id="searchByParkType">
+          <option selected>Search by Park Type</option>
+          <option value=""></option>
+        </select>
+      </div>
+    </div>
+
+    <!--      <div class="form-check">
+        <input class="form-check-input" type="radio" name="searchByParkType" id="searchByParkType">
         <label class="form-check-label" for="searchByParkType">
           Search By Park Type
         </label>
       </div>
-    </div>
-  
+      </div>
+    </div> -->
+
+
 
   </main>
 
