@@ -4,11 +4,6 @@
 }
 
 
-.card-img {
-    height: 100vh;
-    width: auto;
-}
-
 .containerP{
     display: flex;
     margin-top: 20px;
