@@ -82,7 +82,7 @@ function addLocationToContainer(location) {
     accordionItemDiv.appendChild(flushCollapseDiv);
 }
 
-function addParkTypeToContainer(location) {
+function addParkTypeToContainer(type) {
     let accordionItemDiv = document.createElement("div");
     accordionItemDiv.className = "accordion-item";
 
@@ -98,13 +98,13 @@ function addParkTypeToContainer(location) {
     btn.type = "button";
     btn.setAttribute("data-bs-toggle", "collapse");
 
-    let targetId = "flush-collapse-" + location.LocationID;
+    let targetId = "flush-collapse-" + type.LocationID;
 
     btn.setAttribute("data-bs-target", "#" + targetId);
     btn.setAttribute("aria-expanded", "false");
     btn.setAttribute("aria-controls", targetId);
 
-    let btnTextNode = document.createTextNode(location.LocationName);
+    let btnTextNode = document.createTextNode(type.LocationName);
     btn.appendChild(btnTextNode);
 
     accordionHeader.appendChild(btn);
@@ -118,16 +118,16 @@ function addParkTypeToContainer(location) {
     accordionBody.className = "accordion-body";
 
     let accordionBodyHTML = `
-        <p><strong>Location ID:</strong> ${location.LocationID}</p>
-        <p><strong>Location Name:</strong> ${location.LocationName}</p>
-        <p><strong>Address:</strong> ${location.Address}</p>
-        <p><strong>City:</strong> ${location.City}</p>
-        <p><strong>State:</strong> ${location.State}</p>
-        <p><strong>Zip Code:</strong> ${location.ZipCode}</p>
-        <p><strong>Phone:</strong> ${location.Phone}</p>
-        <p><strong>Fax:</strong> ${location.Fax}</p>
-        <p><strong>Latitude:</strong> ${location.Latitude}</p>
-        <p><strong>Longitude:</strong> ${location.Longitude}</p>
+        <p><strong>Location ID:</strong> ${type.LocationID}</p>
+        <p><strong>Location Name:</strong> ${type.LocationName}</p>
+        <p><strong>Address:</strong> ${type.Address}</p>
+        <p><strong>City:</strong> ${type.City}</p>
+        <p><strong>State:</strong> ${type.State}</p>
+        <p><strong>Zip Code:</strong> ${type.ZipCode}</p>
+        <p><strong>Phone:</strong> ${type.Phone}</p>
+        <p><strong>Fax:</strong> ${type.Fax}</p>
+        <p><strong>Latitude:</strong> ${type.Latitude}</p>
+        <p><strong>Longitude:</strong> ${type.Longitude}</p>
     `;
 
     accordionBody.innerHTML = accordionBodyHTML;
@@ -154,7 +154,7 @@ function searchBtnClicked() {
 
     if (selectedParkType) {
         // Search by park type
-        let parksOfType = nationalParksArray.filter(park => park.ParkType.includes(selectedParkType));
+        let parksOfType = nationalParksArray.filter(park => park.LocationName.includes(selectedParkType));
 
         for (let park of parksOfType) {
             addParkTypeToContainer(park);
