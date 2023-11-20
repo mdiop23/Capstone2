@@ -44,7 +44,6 @@
 
   <!--header for page-->
 
-  <main>
 
     <div class="container mt-5">
       <div class="row">
@@ -57,32 +56,36 @@
     </div>
 
 
-<!-- dropdowns -->
 
-<select id="searchByLocation" style="display: block;">
-    <option id="defaultLocationOption" value="" selected>Select a state</option>
-</select>
-<select id="searchByParkType" style="display: block;">
-    <option id="defaultTypeOption" value="" selected>Select a type of park</option>
-</select><br>
 
-<input type="radio" name="searchMethod" id="searchByLocationRadioBtn" value="location"> Location
-<input type="radio" name="searchMethod" id="searchByParkTypeRadioBtn" value="parkType" style="margin-left: 30px;">&nbsp;Type of Park<br><br>
+<div class="container">
+      <h5>Search by Location</h5>
+      <select id="searchByLocation">
+        <option value="" selected>Choose a location</option>
+      </select><br>
 
-<!-- where the js will display the info in the accordion-->
-<div id="parksContainer" class="accordion accordion-flush"></div>
-   
-  </main>
+      <h5>Search by Park Type</h5>
+      <select id="searchByParkType">
+        <option value="" selected>Choose a park type</option>
+      </select><br>
+      <button id="searchBtn">Submit</button>
+    </div>
+
+  </div>
+
+
+  <div id="parksContainer" class="accordion accordion-flush">
+  </div>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+  <script src="scripts/nationalParkData.js"></script>
   <script src="scripts/nationalpark.js"></script>
   <script src="scripts/locationData.js"></script>
-  <script src="scripts/mountainData.js"></script>
-  <script src="scripts/nationalParkData.js"></script>
   <script src="scripts/parkTypeData.js"></script>
-  <script src="scripts/mountainsinfo.js"></script>
 
 </body>
 
