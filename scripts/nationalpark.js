@@ -2,10 +2,12 @@
 
 window.onload = init;
 
+//declaring global variables for the main aspects of page functionality
 const parksContainer = document.getElementById("parksContainer");
 const searchByLocation = document.getElementById("searchByLocation");
 const searchByParkType = document.getElementById("searchByParkType");
 
+// preparing all aspects, getting the button from html, setting action listener, and populating the two dropdowns
 function init() {
     const searchBtn = document.getElementById("searchBtn");
     searchBtn.onclick = searchBtnClicked;
@@ -13,6 +15,7 @@ function init() {
     populateParkTypeDropdown();
 }
 
+// looping thru location array, making new option and adding that to searchbylo dropdown
 function populateLocationDropdown() {
     for (let location of locationsArray) {
         let newOption = new Option(location, location);
@@ -20,6 +23,7 @@ function populateLocationDropdown() {
     }
 }
 
+//looping though park type array, making new option and adding that to searchbypark dropdown
 function populateParkTypeDropdown() {
     for (let parkType of parkTypesArray) {
         let newOption = new Option(parkType, parkType);
@@ -27,6 +31,7 @@ function populateParkTypeDropdown() {
     }
 }
 
+// pulling info for selected option from locations array and displaying it in dynamic accordion
 function addLocationToContainer(location) {
     let accordionItemDiv = document.createElement("div");
     accordionItemDiv.className = "accordion-item";
@@ -82,6 +87,8 @@ function addLocationToContainer(location) {
     accordionItemDiv.appendChild(flushCollapseDiv);
 }
 
+
+// // pulling info for selected option from park type array and displaying it in dynamic accordion
 function addParkTypeToContainer(type) {
     let accordionItemDiv = document.createElement("div");
     accordionItemDiv.className = "accordion-item";
@@ -137,6 +144,8 @@ function addParkTypeToContainer(type) {
     accordionItemDiv.appendChild(flushCollapseDiv);
 }
 
+
+// action listener for what to do when button is clicked aka display corresponding info to selected values via an accordion
 function searchBtnClicked() {
     parksContainer.innerHTML = "";
 

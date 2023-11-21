@@ -10,7 +10,7 @@ window.onload = init;
 // calls the dropdown function
 function init() {
     displayMountainsDropdown();
-    mountainSelectionDropdown.onchange = dropdownSelection; // Fix function name here
+    mountainSelectionDropdown.onchange = dropdownSelection;
 }
 
 // grabs info from mountainsArray in the provided js file and displays the names as options
@@ -24,7 +24,8 @@ function displayMountainsDropdown() {
     });
 }
 
-// Function to handle dropdown selection
+// Function to handle dropdown selection by looping through mountains array until the mountain name matches drop down selection
+// when matching, the new mountain selected function is called
 function dropdownSelection() {
     let mountainSelectedOption = mountainSelectionDropdown.value;
     for (let j = 0; j < mountainsArray.length; j++) {
@@ -35,6 +36,8 @@ function dropdownSelection() {
     }
 }
 
+
+// pull all relevant display info elements from html to display the mountain details from the mountain variable
 function newMtSelected(mountain) {
     let nameOfMountain = document.getElementById("mountainName");
     let elevationOfMountain = document.getElementById("elevation");
