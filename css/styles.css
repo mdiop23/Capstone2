@@ -3,8 +3,18 @@
 
 }
 
+/* float is used for positioning/formatting and left tells it that the element should float to the left of its container*/
+.cardimg{
+    width: 360px;
+    height: 540px;
+
+}
 
 .containerP{
     display: flex;
     margin-top: 20px;
+}
+
+body{
+    background-color: blanchedalmond;
 }
